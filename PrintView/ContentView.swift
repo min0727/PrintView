@@ -8,19 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Text("印刷する内容")
-                .font(.largeTitle)
-                .padding()
-            Spacer()
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-}
+    @EnvironmentObject var userSettings: UserSettings
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    var body: some View {
+        Text("メインウインドウのコンテンツ")
+            .padding()
     }
 }

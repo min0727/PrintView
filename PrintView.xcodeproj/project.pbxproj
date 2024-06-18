@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA55159B2C218D07006701B9 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA55159A2C218D07006701B9 /* UserSettings.swift */; };
+		CA55159D2C218D7B006701B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA55159C2C218D7B006701B9 /* SettingsView.swift */; };
 		CAD767BF2C1E7DB300631CA8 /* PrintViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD767BE2C1E7DB300631CA8 /* PrintViewApp.swift */; };
 		CAD767C12C1E7DB300631CA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD767C02C1E7DB300631CA8 /* ContentView.swift */; };
 		CAD767C32C1E7DB500631CA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAD767C22C1E7DB500631CA8 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA55159A2C218D07006701B9 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		CA55159C2C218D7B006701B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CAD767BB2C1E7DB300631CA8 /* PrintView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrintView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAD767BE2C1E7DB300631CA8 /* PrintViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintViewApp.swift; sourceTree = "<group>"; };
 		CAD767C02C1E7DB300631CA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			children = (
 				CAD767BE2C1E7DB300631CA8 /* PrintViewApp.swift */,
 				CAD767C02C1E7DB300631CA8 /* ContentView.swift */,
+				CA55159A2C218D07006701B9 /* UserSettings.swift */,
+				CA55159C2C218D7B006701B9 /* SettingsView.swift */,
 				CAD767C22C1E7DB500631CA8 /* Assets.xcassets */,
 				CAD767C72C1E7DB500631CA8 /* PrintView.entitlements */,
 				CAD767C42C1E7DB500631CA8 /* Preview Content */,
@@ -140,6 +146,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAD767C12C1E7DB300631CA8 /* ContentView.swift in Sources */,
+				CA55159D2C218D7B006701B9 /* SettingsView.swift in Sources */,
+				CA55159B2C218D07006701B9 /* UserSettings.swift in Sources */,
 				CAD767BF2C1E7DB300631CA8 /* PrintViewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

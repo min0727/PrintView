@@ -9,36 +9,37 @@ import SwiftUI
 
 @main
 struct PrintViewApp: App {
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
+    @StateObject var userSettings = UserSettings()
+    @State private var showSettings = false
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(userSettings)
+                .frame(minWidth: 400, minHeight: 300)
         }
         .commands {
+            CommandGroup(after: CommandGroupPlacement.appInfo) {
+                Button("設定...") {
+                    showSettings.toggle()
+                }
+                .keyboardShortcut(",", modifiers: .command)
+                .sheet(isPresented: $showSettings) {
+                    SettingsView(userSettings: userSettings)
+                }
+            }
             CommandGroup(replacing: .printItem) {
                 Button("印刷...") {
-                    NotificationCenter.default.post(name: .init("PrintNotification"), object: nil)
+                    printMainWindow()
                 }
                 .keyboardShortcut("p", modifiers: .command)
             }
         }
     }
-}
 
-class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
-    func applicationDidFinishLaunching(_ notification: Notification) {
-        NotificationCenter.default.addObserver(self, selector: #selector(printWindow), name: .init("PrintNotification"), object: nil)
-    }
-    
-    @objc func printWindow() {
-        if let window = NSApp.keyWindow {
-            let printOperation = NSPrintOperation(view: window.contentView!)
-            printOperation.run()
-        }
-    }
-    
-    func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
-        return true
+    func printMainWindow() {
+        guard let window = NSApplication.shared.windows.first else { return }
+        let printOperation = NSPrintOperation(view: window.contentView!)
+        printOperation.run()
     }
 }
