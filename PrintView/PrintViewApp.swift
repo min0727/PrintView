@@ -21,7 +21,8 @@ struct PrintViewApp: App {
         .commands {
             CommandGroup(after: CommandGroupPlacement.appInfo) {
                 Button("設定...") {
-                    showSettings.toggle()
+                    print("設定ボタンが押されました")
+                        showSettings.toggle()
                 }
                 .keyboardShortcut(",", modifiers: .command)
                 .sheet(isPresented: $showSettings) {
